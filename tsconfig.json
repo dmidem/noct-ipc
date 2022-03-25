@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module" : "commonjs",
+    "moduleResolution": "node",
+    "removeComments" : true,        
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration" : true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "strict": true, 
+    "noImplicitAny": false,
+    "experimentalDecorators": true
+  }
+}
