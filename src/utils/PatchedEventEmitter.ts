@@ -5,6 +5,14 @@ class EventEmitterWithEmitAlias extends EventEmitter {
   public emitEvent(eventName: string | symbol, ...args: any[]): boolean {
     return super.emit(eventName, ...args)
   }
+
+  constructor(options?) {
+    super(options)
+
+    // To avoid unhandled errors
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    this.on('error', () => {})
+  }
 }
 
 type PatchedEventEmitter = new () => {

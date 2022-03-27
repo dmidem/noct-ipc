@@ -47,7 +47,7 @@ export class DgramServer extends BaseServer<ClientSocket, SocketServer> {
   }
 
   constructor(config: Config, path: string, port: number, udpType: UDPType) {
-    super(config, udpType === 'udp4' || path === '::1' ? '127.0.0.1' : path, port)
+    super(config, udpType === 'udp4' && path === '::1' ? '127.0.0.1' : path, port)
     this.udpType = udpType
   }
 

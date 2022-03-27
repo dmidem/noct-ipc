@@ -13,7 +13,7 @@ import {
   makeRawBuffer,
 } from '../Message'
 
-import { PatchedEventEmitter, TaskQueue, log, makePipePath } from '../utils'
+import { PatchedEventEmitter, TaskQueue, log, makePipePath, makeServerPath } from '../utils'
 
 type ClientSocket = net.Socket | tls.TLSSocket
 
@@ -150,7 +150,7 @@ class Client extends PatchedEventEmitter {
       if (this.config.stopRetrying || this.retriesRemaining < 1 || this.explicitlyDisconnected) {
         this.emitEvent('disconnect')
 
-        this.log(this.config.id, 'Exceeded connection rety amount of or stopRetrying flag set')
+        this.log(this.config.id, 'Exceeded connection retry amount of or stopRetrying flag set')
 
         this.socket?.destroy()
         this.emitEvent('destroy')
@@ -200,7 +200,7 @@ class Client extends PatchedEventEmitter {
       }
     }
 
-    this.log('Requested connection to', this.id, this.path)
+    this.log('Requested connection to', this.id, makeServerPath(this.path, this.port))
 
     if (!this.path) {
       this.log('Error:', this.id, 'client has not specified socket path it wishes to connect to')

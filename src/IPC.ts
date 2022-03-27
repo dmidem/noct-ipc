@@ -100,7 +100,7 @@ export default class IPC {
   }
 
   public serve(...args: [string, Callback] | [Callback]) {
-    const [callback, path] = typeof args[0] === 'function' ? [args[0], undefined] : args
+    const [path, callback] = typeof args[0] === 'function' ? [undefined, args[0]] : args
 
     this.setupServer(callback, this.validatePath(path))
   }
