@@ -2,13 +2,24 @@
   "name": "nocp-ipc",
   "version": "1.0.0",
   "description": "TypeScript based and malware free replacement for node-ipc",
-  "main": "node-ipc.js",
+  "main": "dist/node-ipc.js",
+  "types": "dist/node-ipc.d.ts",
   "scripts": {
     "build": "tsc -p .",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "ipc",
+    "malware-free",
+    "node-ipc"
+  ],
   "author": "Dmitry Demin <dmitry.demin@outlook.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmidem/noct-ipc.git"
+  },
+  "homepage": "https://github.com/dmidem/noct-ipc",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.4.0",
