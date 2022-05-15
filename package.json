@@ -1,6 +1,6 @@
 {
   "name": "noct-ipc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TypeScript based and malware free replacement for node-ipc",
   "main": "dist/node-ipc.js",
   "types": "dist/node-ipc.d.ts",
